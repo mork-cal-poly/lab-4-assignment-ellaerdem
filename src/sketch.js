@@ -1,3 +1,4 @@
+let creature1X = 5
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -11,17 +12,17 @@ function draw() {
   background(0, 0, 50, 30);
 
     //semi-transparent rectangle
-    fill(50, 0, 255, 25);
-    rect(0, 0, 400, 400);
-    fill(200, 200, 0, 25)
-    rect(400, 0, 400, 400)
+    //fill(50, 0, 255, 25);
+    //rect(0, 0, 400, 400);
+    //fill(200, 200, 0, 25)
+    //rect(400, 0, 400, 400)
   
     //calling function
     drawBackground(180, 200);
     
     drawCreature(200, 200, color(0, 0, 90, 200), color(50, 90, 140, 200));
     
-    drawBackground(580, 200, color(0, 0, 90, 200));
+    //drawBackground(580, 200, color(0, 0, 90, 200));
     
     drawCreature(600, 200, color(80, 50, 0, 200), color(120, 100, 60, 200));
     
