@@ -131,7 +131,16 @@ function draw() {
         rotate(PI/4)
         ellipse(180, 30, 150, 28)
       pop();
-  
+      
+      function mouseClicked() {
+        if (mouseX > 0 && mouseX < 400 && mouseY > 0 && mouseY < 400) {
+        backgroundColor = 255
+      } else {
+        backgroundColor = 0
+      }
+         clicked = !clicked;
+      }
+    
     pop();
   
 }
