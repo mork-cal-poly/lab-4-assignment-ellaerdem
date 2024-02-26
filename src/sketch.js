@@ -1,4 +1,5 @@
 let creature1X = 5
+let clicked = false
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -25,6 +26,11 @@ function draw() {
     //drawBackground(580, 200, color(0, 0, 90, 200));
     
     drawCreature(600, 200, color(80, 50, 0, 200), color(120, 100, 60, 200));
+
+    if (clicked == true) {
+      draw8ball(-380, -700);
+    }
+    
     
   }
   
@@ -38,30 +44,30 @@ function draw() {
         rotate(-PI/12);
       
         fill(0, 0, 0);
-        noStroke()
+        noStroke();
       
         //background
-        fill(200, 200, 255, 20)
-        noStroke()
-        ellipse(300, -150, 500)
-        fill(200, 200, 255, 10)
-        noStroke()
-        ellipse(300, -150, 800)
-        fill(200, 200, 255, 2)
-        noStroke()
-        ellipse(300, -150, 1200)
+        fill(200, 200, 255, 20);
+        noStroke();
+        ellipse(300, -150, 500);
+        fill(200, 200, 255, 10);
+        noStroke();
+        ellipse(300, -150, 800);
+        fill(200, 200, 255, 2);
+        noStroke();
+        ellipse(300, -150, 1200);
     
     
         //bubble
-        fill(200, 200, 255, 50)
-        noStroke()
-        ellipse(300, -150, 200)
+        fill(200, 200, 255, 50);
+        noStroke();
+        ellipse(300, -150, 200);
     
         //exclam
         fill(230, 230, 255);
-        noStroke()
-        quad(270, -180, 290, -200, 310, -140, 290, -130)
-        ellipse(310, -110, 20) 
+        noStroke();
+        quad(270, -180, 290, -200, 310, -140, 290, -130);
+        ellipse(310, -110, 20) ;
       pop();
   }
   
@@ -74,51 +80,51 @@ function draw() {
       rotate(-PI/12);
     
       fill(0, 0, 0);
-      noStroke()
+      noStroke();
       //translate (x, y)
     
       //body
       fill(230, 230, 255);
-      noStroke()
-      rect(-20, -30, 50, 250)
-      rect(80, -30, 50, 250)
-      rect(30, -10, 50, 150)
-      fill(colorTummy)
+      noStroke();
+      rect(-20, -30, 50, 250);
+      rect(80, -30, 50, 250);
+      rect(30, -10, 50, 150);
+      fill(colorTummy);
       ellipse(60, 10, 80, 150)
     
     
       //ears
       fill(255, 255, 248);
-      noStroke()
+      noStroke();
       triangle(-60, -100, -40, -260, -10, -150);
       triangle(80, -160, 110, -290, 130, -140);
     
       //head
-      quad(-60, -100, -10, -150, 80, -160, 130, -140, 140, -20)
-      quad(-60, -100, -50, -50, 144, -50, 130, -140)
+      quad(-60, -100, -10, -150, 80, -160, 130, -140, 140, -20);
+      quad(-60, -100, -50, -50, 144, -50, 130, -140);
     //chin
       quad(160, -80, 170, 5, 20, 20, -50, -50, -140, -110);
-      triangle(160, -80, 130, -90, 130, -70)
+      triangle(160, -80, 130, -90, 130, -70);
     
       //nose
-      fill(0, 0, 50, 256)
+      fill(0, 0, 50, 256);
       ellipse(100, -60, 90, 40);
     
       //eyes
-      fill(0, 0, 0)
-      ellipse(20, -90, 20)
-      ellipse(100, -100, 20)  
+      fill(0, 0, 0);
+      ellipse(20, -90, 20);
+      ellipse(100, -100, 20);  
       
       //eyebrows
-      fill(colorBrow)
+      fill(colorBrow);
       ellipse(10, -120, 30, 20);
       ellipse(100, -125, 30, 20);
     
     
       //mouth
-      stroke(0, 0, 90, 255)
-      noFill()
-      strokeWeight(8)
+      stroke(0, 0, 90, 255);
+      noFill();
+      strokeWeight(8);
       arc(70, -35, 60, 40, 1/9, 3*PI/4);
       arc(125, -40, 60, 40, PI/3, 5*PI/6);
    
@@ -126,22 +132,44 @@ function draw() {
       //arms
       push();
         fill(230, 230, 255);
-        noStroke()
+        noStroke();
         rotate(-PI/4);
-        ellipse(-75, 0, 150, 30)
-        rotate(PI/4)
-        ellipse(180, 30, 150, 28)
+        ellipse(-75, 0, 150, 30);
+        rotate(PI/4);
+        ellipse(180, 30, 150, 28);
       pop();
-      
+  }  
+  function draw8ball(x, y){
+    //8 ball code
+   push();
+   translate(x,y);
+   noStroke();
+    fill('#033500');
+   // ellipse(-40,-9,180,50);
+   stroke(8);
+   fill('#17242F');
+   ellipse(0,0,150);
+   fill(255);
+   ellipse(0,-20,90);
+   //8 ball text
+   noFill();
+   strokeWeight(8);
+   ellipse(0,-20,30);
+   ellipse(0,-45,20);
+   pop();
+  }
       function mouseClicked() {
-        if (mouseX > 0 && mouseX < 400 && mouseY > 0 && mouseY < 400) {
-        backgroundColor = 255
-      } else {
-        backgroundColor = 0
+        // if (mouseX > 0 && mouseX < 400 && mouseY > 0 && mouseY < 400) {
+        // backgroundColor = 255
+        if (mouseX < 350 && 
+          mouseX > 250 && 
+          mouseY < 200 && 
+          mouseY > 50){
+            clicked = !clicked;
+          }
+        
+      // } else {
+      //   backgroundColor = 0
       }
-         clicked = !clicked;
-      }
+       
     
-    pop();
-  
-}
